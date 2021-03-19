@@ -8,10 +8,56 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="inputs text">
-        <input type="text" placeholder="Insert Column"></input>
+    <div class="inputs text no-print">
+        <input type="text" id="columnName" placeholder="Insert Column"></input>
         <!--<input type="text" placeholder="Insert Row"></input>-->
-        <input type="submit" value="Accept" style="width: 100px; cursor: pointer;"></input>
+        <input type="submit" class="accept" id="accept" value="Accept" style="width: 100px; cursor: pointer;"></input>
+        <input type="submit" id="insert" value="Insertar fila" style="width: 100px; cursor: pointer;"></input>
     </div>
+
+    <table style="width: 100%;" id="MyTable" contenteditable>
+        <tr></tr>
+    </table>
 </body>
+<script>
+    var acceptButton = document.getElementById('accept')
+    var insertRowButton = document.getElementById('insert')
+
+    acceptButton.addEventListener('click', insertColumn)
+    insertRowButton.addEventListener('click', insertRow)
+
+    function insertColumn() {
+        var columnName = document.getElementById('columnName')
+        var table = document.getElementById("MyTable");
+        var firstRow = table.querySelector('tr')
+        
+        if (columnName.value) {
+            var numCells = firstRow.querySelectorAll('td').length
+            var cell = firstRow.insertCell(numCells);
+            cell.innerHTML = columnName.value
+            columnName.value = ""
+        }
+
+        var numRow = table.querySelectorAll('tr').length
+        if(numRow > 1) {
+            var rows = table.querySelectorAll('tr')
+            var numRows = table.querySelectorAll('tr').length
+            for(var i = 1; i < numRows; i++) {
+                rows[i].insertCell()
+            }
+        }
+    }
+
+    function insertRow() {
+        var table = document.getElementById("MyTable");
+        var numRow = table.querySelectorAll('tr').length
+        var firstRow = table.querySelector('tr')
+        var numCol = firstRow.querySelectorAll('td').length
+        var row = table.insertRow(numRow);
+
+        for(var i = 0; i < numCol; i++) {
+            row.insertCell(i)
+        }
+    }
+</script>
 </html>

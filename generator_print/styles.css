@@ -119,9 +119,19 @@ input {
     background-color: rgb(214, 214, 214)
   }
   tr:nth-child(even) {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(228, 247, 255);
   }
   tr:first-child {
     background-color: rgb(25, 149, 231);
   }
+
+  .accept {
+    margin-left: 0;
+  }
   
+
+  @media print {    
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
