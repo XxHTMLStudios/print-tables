@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Tables</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="inputs_text">
+        <input type="text" placeholder="Name" id="name"></input>
+        <input type="text" placeholder="Postal Code" id="cp"></input>
+        <input type="text" placeholder="DNI" id="dni"></input>
+        <input type="text" placeholder="Province" id="province"> </input>
+        <input type="text" placeholder="Location" id="location"> </input>
+        <input type="submit" value="Accept" id="accept"></input>
+    </div>
+     <!--TABLES-->
+     <table style="width: 100%;" id="MyTable">
+         <tr>
+             <th>Name</th>
+             <th>ID</th>
+             <th>Country</th>
+             <th>Postal Code</th>
+             <th>Location</th>
+         </tr>
+         <!--
+            <tr>
+             <td>Name1</td>
+             <td>ID1</td>
+             <td>Country1</td>
+             <td>Postal Code</td>
+         </tr>
+         <tr>
+            <td>Name2</td>
+            <td>ID2</td>
+            <td>Country2</td>
+            <td>Postal Code</td>
+        </tr>
+        <tr>
+            <td>Name3</td>
+            <td>ID3</td>
+            <td>Country3</td>
+            <td>Postal Code</td>
+        </tr>
+         -->
+         
+        
+     </table>
+     <script>
+         var nameInput = document.getElementById('name')
+         var cpInput = document.getElementById('cp')
+         var dniInput = document.getElementById('dni')
+         var provinceInput = document.getElementById('province')
+         var locationInput = document.getElementById('location')
+         var acceptInput = document.getElementById('accept')
+
+         acceptInput.addEventListener('click', insertRow)
+        
+         function insertRow(event) {
+            var name = nameInput.value;
+            var cp = cpInput.value;
+            var dni = dniInput.value;
+            var province = provinceInput.value;
+            var location = locationInput.value;
+            if (name && cp && dni && province && location) {
+                var table = document.getElementById("MyTable");
+                var numRow = table.querySelectorAll('tr').lenght
+                var row = table.insertRow(numRow);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+                var cell5 = row.insertCell(4);
+                cell1.innerHTML = name;
+                cell2.innerHTML = dni;
+                cell3.innerHTML = province;
+                cell4.innerHTML = cp;
+                cell5.innerHTML = location;
+            }
+            
+
+            clearInputs()
+        }
+
+        function clearInputs() {
+            nameInput.value = ""
+            cpInput.value = ""
+            dniInput.value = ""
+            provinceInput.value = ""
+            locationInput.value = ""
+        }
+
+     </script>
+</body>
+</html>
