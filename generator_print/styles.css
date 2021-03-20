@@ -128,6 +128,11 @@ input {
   .accept {
     margin-left: 0;
   }
+
+  .version_number {
+    margin: 0px;
+    opacity: 0.5;
+  }
   
 
   @media print {    
