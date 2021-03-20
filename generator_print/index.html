@@ -36,15 +36,16 @@
             var cell = firstRow.insertCell(numCells);
             cell.innerHTML = columnName.value
             columnName.value = ""
-        }
-
-        var numRow = table.querySelectorAll('tr').length
-        if(numRow > 1) {
+        //
+        //
+            var numRow = table.querySelectorAll('tr').length
+            if(numRow > 1) {
             var rows = table.querySelectorAll('tr')
             var numRows = table.querySelectorAll('tr').length
             for(var i = 1; i < numRows; i++) {
                 rows[i].insertCell()
             }
+        }
         }
     }
 
