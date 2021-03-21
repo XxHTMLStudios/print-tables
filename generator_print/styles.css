@@ -108,6 +108,7 @@ input {
   }
   body {
       font-family: gotham;
+      margin: 0;
   }
   
   .inputs_text {
@@ -133,7 +134,71 @@ input {
     margin: 0px;
     opacity: 0.5;
   }
-  
+
+  /*Header*/
+
+  .print_header {
+    width: 100%;
+    background-color: black;
+    height: 100px;
+    border-bottom: 3px solid rgb(134, 134, 134);
+    display: flex;
+  }
+   a {
+     color: white;
+     text-decoration: none;
+     transition: 0.5s;
+     font-size: 22px;
+   }
+
+   a:hover {
+    color: rgb(194, 194, 194);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .header_content {
+    height: 100px;
+    width: 578px;
+    display: flex;
+    margin: 0 auto;
+    font-weight: 900;
+  }
+
+  .coming_soon {
+    width: 562.5px;
+    text-align: center;
+    margin-top: 40px;
+    color: rgb(175, 35, 35);
+  }
+
+  .news {
+    width: 562.5px;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .xxhtml_studios {
+    width: 562.5px;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .title_print {
+    color: white;
+  }
+
+  .title_generator {
+    color: rgb(255, 255, 255);
+  }
+
+  .titles {
+    display: flex;
+    flex-direction: row;
+    margin-left: 123px;
+    margin-top: 10px;
+  }
+
 
   @media print {    
     .no-print, .no-print * {
